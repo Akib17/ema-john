@@ -17,37 +17,14 @@ const Userbody = () => {
         const newCart = [...cart, user]
         setCart(newCart)
     }
-    let price = [2332, 3183, 9392, 7387, 91822, 82823, 8281, 1123, 9283, 1098, 4323, 8764, 87387, 5746, 8492]
-    // let newPrice = Object.assign(price)
-    // let newObj = {
-    //     ...user,
-    //     ...newPrice
-    // }
-    let arrayShuffle = function (arr) {
-        let newPos,
-        temp;
-
-        for (let i = arr.length - 1; i > 0; i--) {
-            newPos = Math.floor(Math.random() * (i + 1));
-            temp = arr[i]
-            arr[i] = arr[newPos]
-            arr[newPos] = temp
-        }
-        return arr
-    }
-    let newArr = arrayShuffle(price)
-    const newPrice = {
-        ...user,
-        ...newArr
-    }
     return (
-        <div className='row mt-5'>
+        <div className='row mt-5 user-body'>
             <div className="col-lg-8 col-md-12">
                 {
-                    user.map(el => <User price={newArr} cartHandler={cartHandler} user={el}></User>)
+                    user.map(el => <User cartHandler={cartHandler} user={el}></User>)
                 }
             </div>
-            <div className="col-lg-4 col-md-12">
+            <div className="col-lg-3 offset-lg-1 col-md-12 fixed rounded p-5 mt-4 shadow">
                 <Cart cart={cart}></Cart>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import './User.css'
-import { useState } from 'react';
 
 
 const User = (props) => {
@@ -8,8 +7,6 @@ const User = (props) => {
     const { title, first, last } = name
     const { city, state, country } = location
     const { large } = picture
-    // const [newPrice, setNewPrice] = useState([]);
-    // const singlePrice = props.price.map(p => setNewPrice(p))
 
     return (
         <div className="row shadow my-4 rounded py-4">
